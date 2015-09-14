@@ -26,9 +26,11 @@ var makeSpecPath = function (path) {
 }
 
 var mocha = function (path) {
+  console.log('running '+path)
   gulp.src(path).pipe(shell([
-    'node_modules/.bin/mocha --color -r ./spec/spec_helper <%= file.path %>'
+    'node_modules/.bin/mocha --compilers js:babel/register --color -r ./spec/spec_helper <%= file.path %>'
   ]))
+  .on('error', function () {});
 };
 
 gulp.task('spec-watch', function () {
