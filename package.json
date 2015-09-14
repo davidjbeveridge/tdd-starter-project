@@ -1,0 +1,37 @@
+{
+  "name": "tdd-starter-project",
+  "version": "0.0.1",
+  "description": "A simple starter project for teaching TDD",
+  "scripts": {
+    "test": "npm run spec",
+    "spec": "mocha -r ./spec/spec_helper 'spec/*_spec.js' 'spec/**/*_spec.js'",
+    "spec-watch": "gulp spec-watch",
+    "build": "browserify src/index.js -t babelify -o dist/index.js",
+    "build-watch": "watchify src/index.js -t babelify -o dist/index.js",
+    "livereload": "livereload",
+    "serve": "static .",
+    "foreman": "nf start"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "browserify": "^11.1.0",
+    "chai": "^3.2.0",
+    "foreman": "^1.4.1",
+    "gulp": "^3.9.0",
+    "gulp-cli": "^0.3.0",
+    "gulp-shell": "^0.4.3",
+    "livereload": "^0.3.7",
+    "mocha": "^2.3.2",
+    "sinon": "^1.16.1",
+    "sinon-chai": "^2.8.0",
+    "watchify": "^3.4.0"
+  },
+  "dependencies": {
+    "backbone": "^1.2.3",
+    "jquery": "^2.1.4",
+    "react": "^0.13.3",
+    "underscore": "^1.8.3"
+  }
+}
